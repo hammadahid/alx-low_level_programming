@@ -1,17 +1,17 @@
 #include <stdio.h>
 
 /**
- * main - Prints the alphabe in lower case
- *
- * Return: Always 0 (Success)
+ * main - main block
+ * Description: Get a random number and check its last digit, compare it with 5
+ * Return: 0
  */
 char a = 97;
 int main(void)
 {
-    for(; a<=122 ; a++)
-    {
-       putchar(a);
-    }
-    putchar('\n');
-    return (0);
+for ( ; a<=122 ; a++)
+{
+putchar(a);
+}
+putchar('\n');
+return (0);
 }
