@@ -9,7 +9,7 @@
 int main(void)
 {
 char a = 97;
-for ( ; a<=122 ; a++)
+for ( ; a <= 122 ; a++)
 {
 if (a != 101)
 {
