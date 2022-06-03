@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /**
- * main - check is random number is positive or negative
- *
- * Return - Always 0 (Success)
+ * main - main block
+ * Description: Get a random number and check its last digit, compare it with 5
+ * Return: 0
  */
 int main(void)
 {
@@ -13,7 +13,6 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
 if (n > 0)
 {
 printf("%d is positive\n", n);
