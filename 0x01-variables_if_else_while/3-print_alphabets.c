@@ -5,17 +5,18 @@
  *
  * Return: Always 0 (Success)
  */
-char a = 97;
+
 int main(void)
 {
-    for(; a<=122 ; a++)
-    {
-       putchar(a);
-    }
-    for(a=65; a<=90 ; a++)
-    {
-       putchar(a);
-    }
-    putchar('\n');
-    return (0);
+char a = 97;
+for ( ; a <= 122 ; a++)
+{
+putchar(a);
+}
+for ( a=65; a<=90 ; a++)
+{
+putchar(a);
+}
+putchar('\n');
+return (0);
 }
