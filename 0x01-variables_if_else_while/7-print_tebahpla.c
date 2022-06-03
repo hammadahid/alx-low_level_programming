@@ -9,7 +9,7 @@
 int main(void)
 {
 char a = 122;
-for(; a>=97 ; a--)
+for ( ; a >= 97 ; a--)
 {
 putchar(a);
 }
