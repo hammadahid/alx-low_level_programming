@@ -5,13 +5,14 @@
  *
  * Return: Always 0 (Success)
  */
-int i = 48;
+
 int main(void)
 {
-    for (; i < 58 ; i++)
-    {
-        putchar(i);
-    }
-    putchar('\n');
-    return (0);
+int i = 48;
+for ( ; i < 58 ; i++)
+{
+putchar(i);
+}
+putchar('\n');
+return (0);
 }
