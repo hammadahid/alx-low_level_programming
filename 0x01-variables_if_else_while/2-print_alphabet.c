@@ -8,7 +8,7 @@
 char a = 97;
 int main(void)
 {
-for ( ; a<=122 ; a++)
+for ( ; a <= 122 ; a++)
 {
 putchar(a);
 }
