@@ -5,20 +5,20 @@
  *
  * Return: Always 0 (Success)
  */
-char a = 97;
-int main(void)
-{
-    for(; a<=122 ; a++)
-    {
-       if (a != 101)
-       {
-           if (a != 113)
-           {
-               putchar(a);
-           }
-       }
 
-    }
-    putchar('\n');
-    return (0);
+int main(void)
+char a = 97;
+{
+for ( ; a<=122 ; a++)
+{
+if (a != 101)
+{
+if (a != 113)
+{
+putchar(a);
+}
+}
+}
+putchar('\n');
+return (0);
 }
