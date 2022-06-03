@@ -18,10 +18,6 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 
 Last_Digit = n % 10;
-if (n < 0)
-{
-Last_Digit = Last_Digit * -1;
-}
 printf("Last digit of %d is %d ", n, Last_Digit);
 if (Last_Digit > 5)
 {
