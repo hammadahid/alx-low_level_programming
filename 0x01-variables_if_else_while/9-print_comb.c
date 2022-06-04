@@ -1,27 +1,25 @@
 #include <stdio.h>
-
+#include <unistd.h>
 /**
- * main - Prints all possible combinations for single digit numbers
- *
- * Return: Always 0 (Success)
+ * main - Entry point
+ * Description: prints numbers
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-    int i = 48;
-    int a = 48;
+	int i;
 
-    for (; i < 58 ; i++)
-    {
+	for (i = '0'; i <= '9' ; i++)
+	{
+		putchar(i);
 
-        for(; a < 58 ; a++)
-        {
-           putchar(i);
-           putchar(a);
-           putchar(',');
-           putchar(' ');
-        }
-        a = 48;
-    }
+		if (i != '9')
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
 
-    return (0);
+	putchar('\n');
+	return (0);
 }
