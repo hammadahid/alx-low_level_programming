@@ -2,6 +2,7 @@
 
 /**
  * reset_to_98 - update value pointer n stores to 98
+ * @n: int pointer
  * Return: void
  */
 
