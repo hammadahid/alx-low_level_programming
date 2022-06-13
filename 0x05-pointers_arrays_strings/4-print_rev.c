@@ -12,9 +12,12 @@ while(s[i] != '\0')
 {
 i++;
 }
-for (; i > 0; i--)
+for (; i >= 0; i--)
+{
+if (s[i] != '\0')
 {
 _putchar(s[i]);
+}
 }
 _putchar('\n');
 }
