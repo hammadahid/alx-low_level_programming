@@ -2,10 +2,12 @@
 
 /**
  * swap_int - swap the values of two integers
+ * @a: pointer to int a
+ * @b: pointer to int b
  * Return: void
  */
 
-void swap_int(int *a,int *b)
+void swap_int(int *a, int *b)
 {
 int c = 0;
 c = (*a) ^ (*b);
