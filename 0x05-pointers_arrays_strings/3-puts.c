@@ -1,6 +1,7 @@
 #include "main.h"
 /**
- * puts - prints a string
+ * _puts - prints a string
+ * @str: pointer to char
  * Return: void
  */
 
@@ -10,7 +11,6 @@ int i = 0;
 while (1)
 {
 _putchar(str[i]);
-
 if (str[i] == '\0'){
 break;
 }
