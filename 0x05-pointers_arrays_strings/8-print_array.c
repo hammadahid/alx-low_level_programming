@@ -19,6 +19,7 @@ else
 {
 printf("%d", *(a + i));
 printf(",");
+printf(" ");
 }
 }
 printf("\n");
