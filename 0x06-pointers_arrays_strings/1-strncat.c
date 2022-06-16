@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "main.h"
 /**
  * _strncat - appends n character of src string to dest string
