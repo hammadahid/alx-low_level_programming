@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "main.h"
 /**
  * _strncat - appends n character of src string to dest string
@@ -15,8 +14,6 @@ while (dest[j] != '\0')
 {
 j++;
 }
-
-
 for (l = 0; l < n; l++, j++)
 {
 dest[j] = src[l];
