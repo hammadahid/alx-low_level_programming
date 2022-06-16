@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * _string_touppper - changes all lower case to uppercase
+ * string_touppper - changes all lower case to uppercase
  * @s: pointer to char
  * Return: pointer to string
  */
 
-char *_string_toupper(char *s)
+char *string_toupper(char *s)
 {
 int i = 0;
 while (s[i] != '\0')

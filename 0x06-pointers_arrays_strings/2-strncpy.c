@@ -9,20 +9,17 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-int j = 0;
 int i = 0;
-int k = 0;
-int count = 0;
+int l = 0;
 
-while (src[i] != '\0')
+while (dest[i] != '\0')
 {
 i++;
 }
-char *append = malloc(i);
 
-for (int l = 0; l < n; l++)
+for (l = 0; l < n; l++, i++)
 {
-append[k] = src[l];
+dest[i] = src[l];
 }
-return (append);
+return (dest);
 }
