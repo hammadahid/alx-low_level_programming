@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "main.h"
 /**
  * _strncpy - copy n character from src string to dest string
@@ -11,12 +10,10 @@ char *_strncpy(char *dest, char *src, int n)
 {
 int i = 0;
 int l = 0;
-
 while (dest[i] != '\0')
 {
 i++;
 }
-
 for (l = 0; l < n; l++, i++)
 {
 dest[i] = src[l];
