@@ -29,7 +29,8 @@ int main(int argc, char **argv)
 {
 int sum = 0;
 int check = 0;
-for (int i = 0; i < argc; i++)
+int i = 0;
+for (i = 0; i < argc; i++)
 {
 check = IsDigit(argv[i]);
 if (check == 0)
