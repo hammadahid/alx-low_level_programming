@@ -1,57 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * IsDigit - check if a string contains only numbers
- * @s: pointer to a string
- * Return: int
+ * isInteger - checks if s is an integer
+ * @s: string to check
+ * Return: 0 or 1
  */
-int IsDigit(char *s)
+
+int isInteger(const char *s)
 {
 int i = 0;
-int set  = 0;
-for (i = 0; s[i] != '\0'; i++)
+while (s[i] != '\0')
 {
-if (s[i] < 48 || s[i] > 57)
-{
-set  = 1;
+	if (s[i] < '0' || s[i] > '9')
+		return (1);
+	i++;
 }
-}
-return (set);
+return (0);
 }
 
 /**
- * main - add all postive numbers
- * @argc: integer that counts number of argument
- * @argv: an array of char that contains argument passed to the program
- * Return: Success(0)
+ * main - adds positive numbers
+ * @argc: int
+ * @argv: list
+ * Return: 0
  */
-int main(int argc, char **argv)
+
+int main(int argc, char const *argv[])
 {
 int sum = 0;
-int check = 0;
-int i = 0;
-if (argc == 1)
+while (--argc)
 {
-printf("0\n");
+	if (isInteger(argv[argc]))
+	{
+		printf("Error\n");
+		return (1);
+	}
+	sum += atoi(argv[argc]);
 }
-else
-{
-for (i = 0; i < argc; i++)
-{
-check = IsDigit(argv[i]);
-if (check == 0)
-{
-sum = sum + (atoi(argv[i]));
-}
-}
-if (check == 0)
-{
-printf("%d\n", sum);
-}
-else
-{
-printf("Error\n");
-}
-}
+
+printf("%i\n", sum);
+
 return (0);
 }
