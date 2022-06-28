@@ -6,8 +6,7 @@
  * @width: int
  * @height: int
  * Return: NULL on faliure
- */
-
+*/
 int **alloc_grid(int width, int height)
 {
 int **array;
@@ -23,3 +22,4 @@ array[i] = malloc(width * sizeof(int **));
 }
 return (array);
 }
+
