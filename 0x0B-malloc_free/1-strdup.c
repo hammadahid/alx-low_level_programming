@@ -20,7 +20,7 @@ for (strlen = 0; str[strlen] != '\0'; strlen++)
 {
 ;
 }
-dup = malloc(sizeof(char) * strlen);
+dup = malloc((sizeof(char) * strlen) + 1);
 for (i = 0; i < strlen; i++)
 {
 dup[i] = str[i];
