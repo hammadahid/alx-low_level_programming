@@ -14,7 +14,7 @@ int i;
 array = malloc(sizeof(int *) * (height));
 if (array == NULL)
 {
-return (NULL):
+return (NULL);
 }
 if (width <= 0 || height <= 0)
 {
