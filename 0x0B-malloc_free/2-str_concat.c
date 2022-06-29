@@ -30,7 +30,11 @@ for (size_s2 = 0; s2[size_s2] != '\0'; size_s2++)
 {
 ;
 }
-concat = malloc(sizeof(char) * (size_s1 + size_s2 + 4));
+concat = malloc(sizeof(char) * (size_s1 + size_s2 + 5));
+if (concat == NULL)
+{
+return (NULL);
+}
 for (i = 0; i < size_s1; i++)
 {
 concat[i] = s1[i];
