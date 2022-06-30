@@ -22,7 +22,7 @@ if (ptr == NULL)
 Nptr = malloc(new_size);
 if (Nptr == NULL)
 {
-    return (NULL);
+return (NULL);
 }
 return (Nptr);
 }
