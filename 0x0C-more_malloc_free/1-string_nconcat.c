@@ -39,7 +39,7 @@ s2 = "\0";
 }
 size_s1 = _strlen(s1);
 size_s2 = _strlen(s2);
-if (n >= size_s2)
+if (n > size_s2)
 {
 len = (size_s1 + size_s2 + 1);
 n =  size_s2;
@@ -61,5 +61,6 @@ for (j = 0; j < n; j++, i++)
 {
 concat[i] = s2[j];
 }
+concat[i] = '\0';
 return (concat);
 }

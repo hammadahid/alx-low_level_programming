@@ -16,7 +16,7 @@ if (min > max)
 {
 return (NULL);
 }
-len = max +1;
+len = (max - min) + 1;
 array = malloc(sizeof(int) * len);
 if (array == NULL)
 {
@@ -24,7 +24,7 @@ return (NULL);
 }
 for (i = 0; i < len; i++)
 {
-array[i] = min +i;
+array[i] = min + i;
 }
 return (array);
 }
