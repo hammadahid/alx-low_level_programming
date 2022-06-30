@@ -19,9 +19,12 @@ return (ptr);
 }
 if (ptr == NULL)
 {
-free(ptr);
-ptr = malloc(new_size);
-return (ptr);
+Nptr = malloc(new_size);
+if (Nptr == NULL)
+{
+    return (NULL);
+}
+return (Nptr);
 }
 if (new_size > old_size)
 {
