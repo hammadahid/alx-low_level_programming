@@ -1,4 +1,4 @@
 #ifndef FILE_PI
 #define FILE_PI
-#define PI 3.141592653559
+#define PI 3.14159265359
 #endif
