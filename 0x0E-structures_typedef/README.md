@@ -1,0 +1,1 @@
+Struct and typpedef task
