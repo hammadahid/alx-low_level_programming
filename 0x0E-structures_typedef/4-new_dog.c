@@ -1,61 +1,84 @@
-#include <stdio.h>
-#include <stdlib.h>
+
 #include "dog.h"
+
 /**
  * new_dog - creates a new dog
- * @name: string literal
- * @owner: string literal
- * @age: float
- * Return: NULL if functions fail
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ * Return: malloced dog_t
  */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
-int i;
-int _strlen_name = 0;
-int _strlen_owner = 0;
-char *copy_name;
-char *copy_owner;
-dog_t *_new_dog;
-for (i = 0; name[i] != '\0'; i++)
-{
-;
+	char *n, *o;
+	dog_t *new_dog = malloc(sizeof(dog_t));
+
+	if (!new_dog || !name || !owner)
+	{
+		return (NULL);
+	}
+	n = malloc(_strlen(name) + 1);
+	if (!n)
+	{
+		return (free(new_dog), NULL);
+	}
+	n = _strdup(name);
+	new_dog->name = n;
+	o = malloc(_strlen(owner) + 1);
+	if (!o)
+	{
+		return (free(new_dog->name), free(new_dog), NULL);
+	}
+	o = _strdup(owner);
+	new_dog->owner = o;
+	new_dog->age = age;
+	return (new_dog);
 }
-i = _strlen_name;
-copy_name = malloc(sizeof(char) * _strlen_name + 1);
-if (copy_name == NULL)
+
+/**
+ * _strlen - returns the length of a string
+ * @s: string s
+ * Return: length of string
+ */
+
+int _strlen(char *s)
 {
-return (NULL);
+	char *p = s;
+
+	while (*s)
+	{
+		s++;
+	}
+	return (s - p);
 }
-for (i = 0; name[i] != '\0'; i++)
+
+/**
+ * _strdup - returns a pointer to a newly allocated space in memory,
+ * which contains a copy of the string given as a parameter.
+ * @str: string to be copied
+ * Return: copied string
+ */
+
+char *_strdup(char *str)
 {
-copy_name[i] = name[i];
-}
-copy_name[i] = '\0';
-for (i = 0; name[i] != '\0'; i++)
-{
-;
-}
-i = _strlen_owner;
-copy_owner = malloc(sizeof(char) * _strlen_owner + 1);
-if (copy_owner == NULL)
-{
-return (NULL);
-}
-for (i = 0; owner[i] != '\0'; i++)
-{
-copy_owner[i] = owner[i];
-}
-copy_owner[i] = '\0';
-_new_dog->name = name;
-if (name == NULL)
-{
-return (NULL);
-}
-_new_dog -> owner = owner;
-if (name == NULL)
-{
-return (NULL);
-}
-_new_dog -> age = age;
-return (_new_dog);
+	int i, len;
+	char *copy;
+
+	if (!str)
+	{
+		return (NULL);
+	}
+	len = _strlen(str);
+	copy = malloc(sizeof(char) * len + 1);
+	if (!copy)
+	{
+		return (NULL);
+	}
+	for (i = 0; i < len; i++)
+	{
+		copy[i] = str[i];
+	}
+	copy[i] = 0;
+	return (copy);
 }
