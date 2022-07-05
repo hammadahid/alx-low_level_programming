@@ -1,84 +1,78 @@
-#include <stdlib.h>
 #include "dog.h"
-
+#include <stdlib.h>
+int _strlen(char *s);
+char *_strcpy(char *x, char *y);
 /**
- * new_dog - creates a new dog
- * @name: name of dog
- * @age: age of dog
- * @owner: owner of dog
- * Return: malloced dog_t
+ * new_dog - makes a new dog, memory and all
+ * @name: name to create mem and assign to for dog
+ * @age: age to assign to for dog
+ * @owner: owner to create mem and assign to for dog
+ *
+ * Return: pointer to new dog_t (struct dog)
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *n, *o;
-	dog_t *new_dog = malloc(sizeof(dog_t));
+	dog_t *new_d;
 
-	if (!new_dog || !name || !owner)
-	{
+	new_d = malloc(sizeof(dog_t));
+	if (new_d == NULL)
 		return (NULL);
-	}
-	n = malloc(_strlen(name) + 1);
-	if (!n)
+	if (name == NULL)
+		new_d->name = NULL;
+	else
 	{
-		return (free(new_dog), NULL);
+		new_d->name = malloc(_strlen(name) + 1);
+		if (new_d->name == NULL)
+		{
+			free(new_d);
+			return (NULL);
+		}
+		new_d->name = _strcpy(new_d->name, name);
 	}
-	n = _strdup(name);
-	new_dog->name = n;
-	o = malloc(_strlen(owner) + 1);
-	if (!o)
+	if (owner == NULL)
+		new_d->owner = NULL;
+	else
 	{
-		return (free(new_dog->name), free(new_dog), NULL);
+		new_d->owner = malloc(_strlen(owner) + 1);
+		if (new_d->owner == NULL)
+		{
+			free(new_d->name);
+			free(new_d);
+			return (NULL);
+		}
+		new_d->owner = _strcpy(new_d->owner, owner);
 	}
-	o = _strdup(owner);
-	new_dog->owner = o;
-	new_dog->age = age;
-	return (new_dog);
+	new_d->age = age;
+	return (new_d);
 }
-
 /**
- * _strlen - returns the length of a string
- * @s: string s
- * Return: length of string
+ * _strlen - gets len of str
+ * @s: string to get length of
+ *
+ * Return: length of s
  */
-
 int _strlen(char *s)
 {
-	char *p = s;
+	int i = 0;
 
-	while (*s)
-	{
-		s++;
-	}
-	return (s - p);
+	for (i = 0; s[i]; i++)
+		;
+	return (i);
 }
-
 /**
- * _strdup - returns a pointer to a newly allocated space in memory,
- * which contains a copy of the string given as a parameter.
- * @str: string to be copied
- * Return: copied string
+ * _strcpy - copies string from y to x
+ *
+ * @x: pointer to destination of string
+ * @y: pointer to source string to copy from
+ *
+ * Return: pointer to dest
  */
-
-char *_strdup(char *str)
+char *_strcpy(char *x, char *y)
 {
-	int i, len;
-	char *copy;
+	char *a = x;
 
-	if (!str)
-	{
-		return (NULL);
-	}
-	len = _strlen(str);
-	copy = malloc(sizeof(char) * len + 1);
-	if (!copy)
-	{
-		return (NULL);
-	}
-	for (i = 0; i < len; i++)
-	{
-		copy[i] = str[i];
-	}
-	copy[i] = 0;
-	return (copy);
+	while (*y)
+		*a++ = *y++;
+	*a = '\0';
+	return (x);
 }
