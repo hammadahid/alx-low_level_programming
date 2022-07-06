@@ -17,7 +17,7 @@ if (argc != 4)
 {
 exit (0);
 }
-ptr = get_op_func(operator)(a,b);
-printf("%d\n",ptr);
+ptr = get_op_func(operator)(a , b);
+printf("%d\n", ptr);
 return (0);
 }
