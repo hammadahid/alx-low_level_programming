@@ -40,7 +40,11 @@ return (a * b);
  */
 int op_div(int a, int b)
 {
+if (b)
+{
 return (a / b);
+}
+exit(100);
 }
 
 /**
@@ -51,5 +55,9 @@ return (a / b);
  */
 int op_mod(int a, int b)
 {
+if (b)
+{
 return (a % b);
+]
+exit(100);
 }
