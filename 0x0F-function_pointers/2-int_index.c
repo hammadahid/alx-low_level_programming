@@ -19,5 +19,7 @@ if (result != 0)
 {
 return (i);
 }
+}
+}
 return (-1);
 }
