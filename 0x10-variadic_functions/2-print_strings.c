@@ -1,31 +1,25 @@
-#include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
 
 /**
- * print_strings - prints strings, followed by a new line
- * @separator: delimiter
- * @n: n args
- * Return: void
- */
-void print_strings(const char *separator, const unsigned int n, ...)
+* sum_them_all - sum of all its parameters
+* @n: n args
+* Return: sum or if n == 0, return 0
+*/
+int sum_them_all(const unsigned int n, ...)
 {
+	int sum = 0;
+	unsigned int i;
 	va_list arguments;
-	unsigned int s;
-	char *clone;
 
-	va_start(arguments, n);
-
-	for (s = 0; s < n; s++)
+	if (n)
 	{
-		clone = va_arg(arguments, char*);
-		if (clone != NULL)
-			printf("%s", clone);
-		else
-			printf("%p", clone);
-		if (separator != NULL && s < n - 1)
-			printf("%s", separator);
+		va_start(arguments, n);
+		for (i = 0; i < n; i++)
+		{
+			sum += va_arg(arguments, int);
+		}
+		va_end(arguments);
 	}
-	printf("\n");
-	va_end(arguments);
+	return (sum);
 }
