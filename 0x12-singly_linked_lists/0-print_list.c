@@ -2,6 +2,7 @@
 /**
  * print_list - prints all elements of a list
  * @h: pointer to a struct list_t
+ *
  * Return: number of nodes
  */
 
