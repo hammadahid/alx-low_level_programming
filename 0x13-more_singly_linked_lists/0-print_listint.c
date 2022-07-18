@@ -7,11 +7,11 @@
  */
 size_t print_listint(const listint_t *h)
 {
-const listint_t *current  = h;
+const listint_t *current = h;
 int number_node = 0;
 while (current != NULL)
 {
-printf("%d\n",current->n);
+printf("%d\n", current->n);
 current  = current->next;
 number_node++;
 }
