@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * print_listint - prints all element of listint_t
  * @h: const listint_t pointer
